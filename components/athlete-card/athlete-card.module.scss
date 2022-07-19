@@ -1,0 +1,41 @@
+.athleteCard {
+	height: 130px;
+	border-bottom: 1px solid gray;
+	padding: 12px;
+	.titleContainer {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		.left {
+			display: flex;
+			flex-direction: row;
+			align-items: center;	
+			.name {
+				font-size: 1.25rem;
+				margin-right: 10px;
+				overflow: hidden;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				max-width: 300px;
+			}
+			.position {
+				font-size: .85rem;
+				color: grey;
+			}
+		}
+		a {
+			border: 1px solid black;
+			padding: 1px 10px;
+		}
+	}
+	.buttonContainer {
+		display: flex;
+		flex-direction: row;
+		a {
+			font-size: .6rem;
+			margin-right: 5px;
+		}
+	}
+
+}

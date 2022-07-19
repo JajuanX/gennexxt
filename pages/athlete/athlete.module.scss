@@ -1,0 +1,155 @@
+.athlete {
+	display: flex;
+	flex-direction: column;
+	padding-top: 80px;
+
+	.imageContainer {
+		position: fixed;
+		width: 95vw;
+		display: grid;
+		min-height: 200px;
+		place-items: center;
+		margin: 10px;
+		padding-bottom: 20px;
+	}
+
+	.playerContainer {
+		z-index: 20;
+		margin-top: 240px;
+		min-height: 60vh;
+		background-color: #202124;
+		border-radius: 25px 25px 0 0 ;
+		padding: 24px 16px 0;
+		width: 100%;
+		padding-bottom: 80px;
+
+		.starsContainer {
+
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+
+			.star {
+				margin-right: 10px;
+			}
+
+		}
+
+		.infoContainer {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			align-items: flex-start;
+			gap: 5px;
+
+			.titleContainer {
+				display: flex;
+				width: 100%;
+				flex-direction: row;
+				justify-content: space-between;
+				align-items: center;
+				.left {
+					display: flex;
+					flex-direction: row;
+					align-items: center;	
+					.name {
+						font-size: 1.5rem;
+						margin-right: 10px;
+						overflow: hidden;
+						white-space: nowrap;
+						text-overflow: ellipsis;
+						max-width: 300px;
+						color: white;
+					}
+					.position {
+						font-size: .85rem;
+						color: grey;
+					}
+				}
+				.classYear {
+					color: grey;
+				}
+				a {
+					border: 1px solid black;
+					padding: 1px 10px;
+				}
+			}
+			.location {
+				color: grey;
+			}
+		}
+	
+		.playerProfile {
+			background-color: white;
+			border-radius: 5px;
+			margin-top: 24px;
+			padding-top: 10px;
+			height: 180px;
+			h3 {
+				font-size: 1rem;
+				margin-left: 10px;
+				color: black;
+			}
+			.attributesContainer {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				grid-template-rows: 1fr 1fr;
+				gap: 10px;
+				.attributeContainer {
+					margin-bottom: 10px;
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+	
+					.attributeTitle {
+						color: grey;
+						font-size: .85rem;
+					}
+	
+					.attribute {
+						font-size: .90rem;
+					}
+				}
+	
+			}
+		}
+
+		h3 {
+			margin-top: 24px;
+			color: white;
+		}
+
+		h2 {
+			color: black;
+			margin-left: 16px;
+		}
+	
+		.socialMediaIconsContainer {
+			margin-top: 24px;
+			.socialMediaIconContainer {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-around;
+				align-items: center;
+			}
+		}
+	
+		.youtubeContainer {
+			h3 {
+				color: white;
+				margin-bottom: 24px;
+			}
+			.videoContainer {
+				display: grid;
+				place-items: center;
+				width: 100%;
+			}
+			
+			div {
+				width: 80%;
+			}
+		}
+	}
+
+
+}

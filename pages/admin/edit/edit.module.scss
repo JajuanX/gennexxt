@@ -1,0 +1,165 @@
+.editAthlete {
+	padding: 80px 20px 90px;
+
+	label {
+		color: gray;
+		font-weight: 300;
+		font-size: .85rem;
+	}
+	.input {
+		width: 100%;
+		
+	}
+
+	.inputContainer {
+		margin-bottom: 10px;
+	}
+	
+	.mainTitle {
+		text-align: center;
+		font-size: 1.5rem;
+		margin-bottom: 15px;
+	}
+	
+	.photoContainer {
+		position: relative;
+		width: 100px;
+		height: 100px;
+	}
+
+	.coverPhotoContainer {
+		width: 100%;
+		height: 200px;
+		position: relative;
+		margin-bottom: 20px;
+	}
+
+	.featurePhotoContainer {
+		display: flex;
+		margin-bottom: 20px;
+
+		.uploaderContainer {
+			display: grid;
+			place-items: center;
+			flex-grow: 1;
+			margin: 15px 0;
+			.uploadedPhotoContainer {
+				height: 80px;
+				width: 80px;
+				position: relative;
+
+				label {
+					text-align: center;
+				}
+			}
+		}
+	}
+
+	.required {
+		color: red;
+	}
+
+	.operationHoursContainer {
+		border: 1px solid black;
+		padding: 10px;
+		border-radius: 10px;
+		margin-bottom: 24px;
+
+		.days {
+			padding: 8px 10px;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-evenly;
+	
+			.day {
+				margin-right: 10px;
+				margin-bottom: 5px;
+				font-size: .85rem;
+				display: grid;
+				place-items: center;
+				width: 40px;
+			}	
+		}
+
+		.openTwentyFourHours {
+			margin: 15px auto 5px;
+			font-size: .85rem;
+			display: grid;
+			place-items: center;
+			width: 40px;
+		}	
+
+		.timesContainer {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+			.timeContainer {
+				display: flex;
+				flex-direction: column;
+				input {
+					height: 30px;
+					font-size: .85rem;
+				}
+				label {
+					font-size: .85rem;
+				}
+			}
+		}
+	}
+
+	.placeholder {
+		display: grid;
+		place-items: center;
+		height: 100%;
+		width: 100%;
+		border: 1px dashed black;
+	}
+	
+	.photoupload {
+		display: none;
+	}
+
+	.suggestionsContainer {
+		position: relative;
+		z-index: 5;
+		background-color: white;
+		border: lightgray 1px solid;
+	
+		button:hover {
+			background-color: lightgray;
+			margin: auto 0;
+		}
+	
+		button {
+			display: flex;
+			align-items: center;
+			width: 100%;
+			padding: 10px;
+
+			.suggestion {
+				display: flex;
+				flex-direction: row;
+
+				.mainText {
+					font-size: .75rem;
+					font-weight: 700;
+					margin-right: 5px;
+				}
+
+				.secondaryText {
+					font-size: .70rem;
+					font-weight: 200;
+				}
+			}
+		}
+	}
+
+	.button {
+		padding: 5px 10px;
+		border-radius: 5px;
+		width: 100%;
+		color: white;
+		background-color: #f05e22;
+	}
+
+}

@@ -1,0 +1,62 @@
+.signUpPage {
+	display: flex;
+	flex-direction: column;
+
+	label {
+		color: gray;
+		font-weight: 300;
+		font-size: .85rem;
+	}
+	.imageContainer {
+		display: grid;
+		place-items: center;
+	}
+	.container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		h1 {
+			font-size: 1.5rem;
+		}
+	
+		p {
+			text-align: center;
+			width: 90%;
+			margin-bottom: 24px;
+		}
+	
+		.signUpForm {
+			button {
+				margin: 0 auto;
+				background-color: #ef5d30;
+				width: 400px;
+				padding: 5px 10px;
+				border-radius: 5px;
+				color: white;
+			}
+		}
+		form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			.inputsContainers {
+				width: 90vw;
+
+				.inputContainer {
+					width: 100%;
+					padding-bottom: 20px;
+				}
+			}
+			.button {
+				width: 350px;
+				margin: 24px 0;
+			}
+		
+		}
+
+		
+	}
+
+}

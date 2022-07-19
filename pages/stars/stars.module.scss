@@ -1,0 +1,53 @@
+@import "../../styles/breakPoints.module.scss";
+
+.stars {
+	padding-top: 80px;
+	.headerContainer {
+		position: fixed;
+		display: flex;
+		flex-direction: column;
+		z-index: 100;
+		background-color: white;    
+		width: 100%;
+
+		h1 {
+			font-size: 2rem;
+			text-align: center;
+			margin: 24px 0;
+		}
+
+		.starContainer {
+			display: flex;
+			width: 100%;
+			padding: 10px 20px 20px;
+			flex-direction: row;
+			justify-content: space-between;
+			text-decoration: none;
+			margin: 16px 0;
+
+			@media screen and (min-width: 450px) {
+				padding: 10px 80px 20px;
+			}
+
+			button {
+				border: none;
+				background-color: transparent;
+			}
+		}
+	}
+	.waypoint {
+		height: 10px;
+	}
+	
+	.athletesContainer {
+		padding-top: 230px;
+		min-height: 100vh;
+	}
+
+	.waypoint {
+		height: 100px;
+		width: 100%;
+		display: grid;
+		place-items: center;
+	}
+}

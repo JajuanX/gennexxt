@@ -1,3 +1,44 @@
 {
-  "extends": "next/core-web-vitals"
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "plugin:react/recommended",
+        "airbnb",
+        "prettier",
+        "plugin:@next/next/recommended"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 13,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "prettier"
+    ],
+    "rules": {
+        "indent": ["error", "tab"],
+        "react/react-in-jsx-scope": "off",
+        "react/prop-types": "off",
+        "react/jsx-props-no-spreading": "off",
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+        "camelcase": "off",
+        "no-underscore-dangle": "off",
+        "consistent-return":"off",
+        "label-has-associated-control": "off",
+        "jsx-a11y/label-has-associated-control": ["off", {
+        "required": {
+        "some": ["nesting", "id"]
+        }
+        }],
+        "jsx-a11y/label-has-for": ["off", {
+            "required": {
+            "some": ["nesting", "id"]
+            }
+        }]
+    }
 }

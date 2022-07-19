@@ -1,0 +1,49 @@
+.homePage {
+	margin: 0;
+	padding-top: 80px;
+
+	.infoContainer {
+		h1 {
+			text-align: center;
+			font-size: 2rem;
+			margin-bottom: 16px;
+		}
+	
+		p {
+			margin: 0 auto 24px;
+			text-align: center;
+			width: 90%;
+		}
+	}
+
+	.searchByContainer {
+		border: 1px solid #666666;
+		width: 90%;
+		padding:  16px 10px;
+		border-radius: 15px;
+		margin: 0 auto;
+
+		h3 {
+			text-align: center;
+			margin-top: 0;
+		}
+	
+		label {
+			color: #666666;
+			margin: auto;
+		}
+
+		.classContainer {
+			width: 100%;
+			display: grid;
+			place-items: center;
+			margin-top: 24px;
+			margin-bottom: 24px;
+		}
+
+		.starsContainer {
+			margin-top: 24px;
+			width: 100%;
+		}
+	}
+}

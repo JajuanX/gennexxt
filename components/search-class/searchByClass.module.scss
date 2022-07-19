@@ -1,0 +1,89 @@
+.searchByClassContainer {
+	height: 90px;
+	display: flex;
+	flex-direction: column;
+
+	.classContainer {
+		display: flex;
+		height: 90px;
+		width: 100%;
+		gap: 5px;
+		flex-direction: row;
+		justify-content: space-between;
+
+		@media screen and (max-width: 450px) {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+
+		.link {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background-color: black;
+			width: 100px;
+			color: white;
+			border-radius: 4px;
+		}
+
+		.active {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background-color: black;
+			width: 100px;
+			background-color: white;
+			border: 1px solid black;
+			color: black;
+			border-radius: 4px;
+		}
+
+	}
+
+	@media screen and (min-width: 450px) {
+		.classContainer {
+			display: flex;
+			height: 90px;
+			width: 100%;
+			gap: 5px;
+			padding: 30px;
+			flex-direction: row;
+			justify-content: space-between;
+	
+			@media screen and (max-width: 450px) {
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+				justify-content: center;
+			}
+	
+			.link {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background-color: black;
+				height: 40px;
+				width: 100px;
+				color: white;
+				border-radius: 4px;
+			}
+	
+			.active {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background-color: black;
+				height: 40px;
+				width: 100px;
+				background-color: white;
+				border: 1px solid black;
+				color: black;
+				border-radius: 4px;
+			}
+	
+		}
+	}
+
+}
