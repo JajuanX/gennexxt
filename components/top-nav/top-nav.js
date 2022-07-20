@@ -7,7 +7,7 @@ import Logo from '../../public/logo.jpeg';
 import UserContext from '../../lib/context';
 
 function TopNav() {
-	const {user} = useContext(UserContext);
+	const {isAdmin} = useContext(UserContext);
 
 	return (
 		<div className={styles.topNavContainer}>
@@ -18,7 +18,7 @@ function TopNav() {
 					</a>
 				</Link>
 			</div>
-			{ user && <div>
+			{ isAdmin && <div>
 				<Link href='/admin'>
 					Admin
 				</Link>

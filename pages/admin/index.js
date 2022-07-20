@@ -33,11 +33,15 @@ function AdminSearch() {
 			.post(`https://us-central1-gennexxt-2e8e9.cloudfunctions.net/addAdminRole`, {
 				data: {email: userEmail},
 			})
-			.then(() => {
+			.then(response => {
+				console.log(response);
+				if(response.data?.result?.errorInfo){
+					return toast.error('Error giving rights be sure email matches')
+				}
 				toast.success(`Admin rights given to ${userEmail}`);
 			})
 			.catch(() => {
-				toast.error('Error giving rights besure email matches')
+				toast.error('Failed to call database. Contact admin')
 			})
 	}
 
