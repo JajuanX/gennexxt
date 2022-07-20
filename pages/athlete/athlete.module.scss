@@ -4,27 +4,23 @@
 	padding-top: 80px;
 
 	.imageContainer {
-		position: fixed;
-		width: 95vw;
+		position: sticky;
+		top: 0;
+		width: 100vw;
 		display: grid;
-		min-height: 200px;
+		height: auto;
 		place-items: center;
-		margin: 10px;
-		padding-bottom: 20px;
 	}
 
 	.playerContainer {
 		z-index: 20;
-		margin-top: 240px;
 		min-height: 60vh;
 		background-color: #202124;
-		border-radius: 25px 25px 0 0 ;
 		padding: 24px 16px 0;
 		width: 100%;
 		padding-bottom: 80px;
 
 		.starsContainer {
-
 			display: flex;
 			flex-direction: row;
 			justify-content: center;
@@ -83,12 +79,12 @@
 			background-color: white;
 			border-radius: 5px;
 			margin-top: 24px;
-			padding-top: 10px;
-			height: 180px;
-			h3 {
+			padding: 10px;
+			h2 {
 				font-size: 1rem;
 				margin-left: 10px;
 				color: black;
+				margin-bottom: 12px;
 			}
 			.attributesContainer {
 				display: grid;
@@ -131,6 +127,17 @@
 				flex-direction: row;
 				justify-content: space-around;
 				align-items: center;
+			}
+		}
+		.shopContainer {
+			display: grid;
+			h3 {
+				color: white;
+				margin-bottom: 24px;
+			}
+
+			a {
+				margin: 0 auto;
 			}
 		}
 	

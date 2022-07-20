@@ -7,12 +7,13 @@ import toast from 'react-hot-toast';
 import q from 'q';
 import YouTube from 'react-youtube';
 import styles from './athlete.module.scss';
-import starIcon from '../../public/star-gold.min.svg'
+import starIcon from '../../public/star-gold.min.svg';
 import IndexLayout from '../../layouts/IndexLayout';
-import instagram from '../../public/instagram.png'
-import tiktok from '../../public/tiktok.png'
-import twitter from '../../public/twitter.png'
-import facebook from '../../public/facebook.png'
+import instagram from '../../public/instagram.png';
+import tiktok from '../../public/tiktok.png';
+import twitter from '../../public/twitter.png';
+import facebook from '../../public/facebook.png';
+import shop from '../../public/shop.svg';
 
 function AthleteByID() {
 	const router = useRouter();
@@ -129,34 +130,42 @@ function AthleteByID() {
 					<div className={styles.socialMediaIconContainer}>
 						{athlete?.ig &&
 							<div className={styles.attributeContainer}>
-								<a className={styles.attribute} target='_blank' rel="noreferrer" href={athlete?.ig}>
+								<a className={styles.attribute} target='_blank' rel="noreferrer" href={`https://www.instagram.com/${athlete?.ig}`}>
 									<Image alt='instagram' src={instagram} height={60} width={60}/>
 								</a>
 							</div>
 						}
 						{athlete?.tik_tok &&
 							<div className={styles.attributeContainer}>
-								<a className={styles.attribute} target='_blank' rel="noreferrer" href={athlete?.tik_tok}>
+								<a className={styles.attribute} target='_blank' rel="noreferrer" href={`https://www.tiktok.com/@${athlete?.tik_tok}`}>
 									<Image alt='Tik Tok' src={tiktok} height={60} width={60}/>
 								</a>
 							</div>
 						}
 						{athlete?.twitter &&
 							<div className={styles.attributeContainer}>
-								<a className={styles.attribute} target='_blank' rel="noreferrer" href={athlete?.twitter}>
+								<a className={styles.attribute} target='_blank' rel="noreferrer" href={`https://www.twitter.com/${athlete?.twitter}`}>
 									<Image alt='Twitter' src={twitter} height={60} width={60}/>
 								</a>
 							</div>
 						}
 						{athlete?.facebook &&
 							<div className={styles.attributeContainer}>
-								<a className={styles.attribute} target='_blank' rel="noreferrer" href={athlete?.facebook}>
+								<a className={styles.attribute} target='_blank' rel="noreferrer" href={`https://www.facebook.com/${athlete?.facebook}`}>
 									<Image alt='Facebook' src={facebook} height={60} width={60}/>
 								</a>
 							</div>
 						}
 					</div>
 				</div>
+				{athlete?.highlight &&
+					<div className={styles.shopContainer}>
+						<h3>My Shop</h3>
+						<a href={athlete?.store}>
+							<Image alt='shop' src={shop} height={60} width={60}/>
+						</a>
+					</div>
+				}
 				{athlete?.highlight &&
 					<div className={styles.youtubeContainer}>
 						<h3>Hightlight Reel</h3>
