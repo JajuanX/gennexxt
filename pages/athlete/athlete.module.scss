@@ -4,6 +4,7 @@
 	padding-top: 80px;
 
 	.imageContainer {
+		z-index: 0;
 		position: sticky;
 		top: 0;
 		width: 100vw;
@@ -13,7 +14,7 @@
 	}
 
 	.playerContainer {
-		z-index: 20;
+		z-index: 200;
 		min-height: 60vh;
 		background-color: #202124;
 		padding: 24px 16px 0;
@@ -32,6 +33,7 @@
 		}
 
 		.infoContainer {
+			z-index: 200;
 			display: flex;
 			flex-direction: column;
 			justify-content: space-around;
@@ -76,6 +78,7 @@
 		}
 	
 		.playerProfile {
+			z-index: 200;
 			background-color: white;
 			border-radius: 5px;
 			margin-top: 24px;
@@ -121,6 +124,7 @@
 		}
 	
 		.socialMediaIconsContainer {
+			z-index: 200;
 			margin-top: 24px;
 			.socialMediaIconContainer {
 				display: flex;
@@ -130,6 +134,7 @@
 			}
 		}
 		.shopContainer {
+			z-index: 200;
 			display: grid;
 			h3 {
 				color: white;
@@ -142,6 +147,7 @@
 		}
 	
 		.youtubeContainer {
+			z-index: 200;
 			h3 {
 				color: white;
 				margin-bottom: 24px;

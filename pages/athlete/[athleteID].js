@@ -68,6 +68,7 @@ function AthleteByID() {
 			<div className={styles.imageContainer}> 
 				{ athlete.picture_link &&
 					<Image alt='athlete'
+						style={{zIndex: '1'}}
 						src={athlete?.picture_link?.url}
 						height={athlete?.picture_link?.height}
 						width={athlete?.picture_link?.width}
