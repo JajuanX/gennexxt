@@ -177,7 +177,7 @@ function CreateAthlete() {
 							id="stars"
 							className="input-single"
 							placeholder="IE: 5"
-							type="number"
+							type="text"
 							name="stars"
 							value={athlete?.stars || ''}
 							onChange={(e) => handle_inputChange(e)}

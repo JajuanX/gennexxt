@@ -1,7 +1,11 @@
 .athleteCard {
+	display: flex;
+	flex-direction: column;
 	height: 130px;
 	border-bottom: 1px solid gray;
 	padding: 12px;
+	justify-content: space-evenly;
+
 	.titleContainer {
 		display: flex;
 		flex-direction: row;
