@@ -93,8 +93,8 @@ function AthletesByClass() {
 				{athletes?.length > 0 ? athletes.map(athlete => (
 					<AthleteCard key={athlete.id} athlete={athlete} />
 				)):
-					<p>
-						Loading
+					<p className='text-center'>
+						No Athletes Found
 					</p>
 				}
 			</div>

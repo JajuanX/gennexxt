@@ -273,7 +273,7 @@ function EditAthlete() {
 							id="five_ten_five"
 							className="input-single"
 							placeholder="Input time here"
-							type="text"
+							type="number"
 							name="five_ten_five"
 							value={athlete?.five_ten_five || ''}
 							onChange={(e) => handle_inputChange(e)}
@@ -290,7 +290,7 @@ function EditAthlete() {
 							id="vertical_jump"
 							className="input-single"
 							placeholder="Input time here"
-							type="text"
+							type="number"
 							name="vertical_jump"
 							value={athlete?.vertical_jump || ''}
 							onChange={(e) => handle_inputChange(e)}
@@ -307,7 +307,7 @@ function EditAthlete() {
 							id="broad_leap"
 							className="input-single"
 							placeholder="Input Distance 8'11 "
-							type="text"
+							type="number"
 							name="broad_leap"
 							value={athlete?.broad_leap || ''}
 							onChange={(e) => handle_inputChange(e)}
@@ -380,6 +380,7 @@ function EditAthlete() {
 							</label>
 						</div>
 					</div>
+					{validator.current.message('picture_link', athlete?.picture_link.url, 'required')}
 
 					<h1>Logo</h1>
 					<div className="w-full flex flex-col items-center mb-5 h-40">
