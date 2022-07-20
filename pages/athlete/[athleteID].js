@@ -159,10 +159,10 @@ function AthleteByID() {
 						}
 					</div>
 				</div>
-				{athlete?.highlight &&
+				{athlete?.store &&
 					<div className={styles.shopContainer}>
 						<h3>My Shop</h3>
-						<a href={athlete?.store}>
+						<a target='_blank' rel="noreferrer" href={athlete?.store}>
 							<Image alt='shop' src={shop} height={60} width={60}/>
 						</a>
 					</div>
