@@ -90,7 +90,7 @@ export default function Login() {
 							{validator.current.message(
 								'password',
 								userEmail,
-								['required', {max: 20}, {min: 6}]
+								'required'
 							)}
 						</div>
 					</div>
