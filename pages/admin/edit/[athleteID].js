@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-before-interactive-script-outside-document */
-import React, { useEffect, useRef, useContext } from 'react';
+import React, { useEffect, useRef, useContext, useState } from 'react';
 import SimpleReactValidator from 'simple-react-validator';
 import { useRouter } from 'next/router';
 import axios from 'axios';
@@ -24,10 +24,11 @@ function EditAthlete() {
 		handle_uploadChange,
 		handle_getAthlete,
 		athlete,
-		handle_inputChange
+		handle_inputChange,
 	} = useEditAthleteForm();
+	const [, forceUpdate] = useState();
 
-	const { user, isAdmin } = useContext(UserContext);
+	const { user, isAdmin, isSuper } = useContext(UserContext);
 	const router = useRouter();
 	const {athleteID} = router.query;
 	const ITEM_HEIGHT = 48;
@@ -92,7 +93,8 @@ function EditAthlete() {
 		event.preventDefault();
 		if (!validator.current.allValid()) {
 			validator.current.showMessages();
-			toast.error('Whoops please check all fields, reminder if user is activated you need to upload photo')
+			forceUpdate(1)
+			toast.error('Whoops please check all fields');
 			return;
 		}
 		handle_submit(user, athleteID);
@@ -113,7 +115,7 @@ function EditAthlete() {
 			<Toaster position='top-center'/>
 			<h1 className={styles.mainTitle}>Edit Athlete</h1>
 			<form className="" onSubmit={(e) => submitAthlete(e)}>
-				<div className={styles.inputContainer}>
+				{isSuper && <div className={styles.inputContainer}>
 					<label className="business-label" htmlFor="activated">
 							Activate Athlete
 					</label>
@@ -128,7 +130,7 @@ function EditAthlete() {
 						autoComplete="off"
 						onBlur={() => validator.current.showMessageFor('activated')}
 					/>
-				</div>
+				</div>}
 				<div className={styles.inputContainer}>
 					<label className="athlete-label" htmlFor="name">
 							Name<span className={styles.required}> *</span>
@@ -167,6 +169,7 @@ function EditAthlete() {
 							</Select>
 						</FormControl>
 					</Box>
+					{validator.current.message('state', athlete?.state, 'required')}
 				</div>
 
 				<div className={styles.inputContainer}>
@@ -215,12 +218,15 @@ function EditAthlete() {
 						placeholder="1-5"
 						type="number"
 						name="stars"
+						max={isSuper ? '5': '3'}
+						min='1'
 						value={athlete?.stars || ''}
 						onChange={(e) => handle_inputChange(e)}
 						autoComplete="off"
 						onBlur={() => validator.current.showMessageFor('stars')}
 					/>
-					{validator.current.message('stars', athlete?.stars, 'required')}
+					{validator.current.message('stars', Number(athlete?.stars), 'numeric|min:1,num')}
+					{isSuper ? validator.current.message('stars', Number(athlete?.stars), 'numeric|max:5,num'): validator.current.message('stars', Number(athlete?.stars), 'numeric|max:3,num')}
 				</div>
 
 				<div className={styles.inputContainer}>
