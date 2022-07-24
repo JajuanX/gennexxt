@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-before-interactive-script-outside-document */
-import React, { useEffect, useRef, useContext } from 'react';
+import React, { useEffect, useRef, useContext, useState } from 'react';
 import SimpleReactValidator from 'simple-react-validator';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
@@ -8,6 +8,7 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import toast, { Toaster } from 'react-hot-toast';
 import styles from './create.module.scss';
 import useCreateAthleteForm from '../../../lib/useCreateAthleteForm';
 import UserContext from '../../../lib/context';
@@ -22,8 +23,9 @@ function CreateAthlete() {
 		athlete,
 		handle_inputChange
 	} = useCreateAthleteForm();
+	const [, forceUpdate] = useState();
 
-	const { user, isAdmin } = useContext(UserContext);
+	const { user, isAdmin, isSuper } = useContext(UserContext);
 	const router = useRouter();
 	const ITEM_HEIGHT = 48;
 	const ITEM_PADDING_TOP = 8;
@@ -59,7 +61,8 @@ function CreateAthlete() {
 		event.preventDefault();
 		if (!validator.current.allValid()) {
 			validator.current.showMessages();
-			console.log('ran');
+			forceUpdate(1)
+			toast.error('Whoops please check all fields');
 			return;
 		}
 		handle_submit(user);
@@ -70,9 +73,10 @@ function CreateAthlete() {
 			className={styles.CreateAthlete}
 			data-testid="create-business-page"
 		>
+			<Toaster position='top-center'/>
 			<h1 className={styles.mainTitle}>Add Athlete</h1>
 			<form className="" onSubmit={(e) => submitAthlete(e)}>
-				<div className={styles.inputContainer}>
+				{isSuper && <div className={styles.inputContainer}>
 					<label className="business-label" htmlFor="activated">
 							Activate Athlete
 					</label>
@@ -85,7 +89,7 @@ function CreateAthlete() {
 						onChange={(e) => handle_inputChange(e)}
 						autoComplete="off"
 					/>
-				</div>
+				</div>}
 				<div className={styles.inputContainer}>
 					<label className="athlete-label" htmlFor="name">
 							Name<span className={styles.required}> *</span>
@@ -124,6 +128,7 @@ function CreateAthlete() {
 							</Select>
 						</FormControl>
 					</Box>
+					{validator.current.message('state', athlete?.state, 'required')}
 				</div>
 
 				<div className={styles.inputContainer}>
@@ -170,14 +175,17 @@ function CreateAthlete() {
 						id="stars"
 						className="input-single"
 						placeholder="IE: 5"
-						type="text"
+						type="number"
 						name="stars"
+						max={isSuper ? '5': '3'}
+						min='1'
 						value={athlete?.stars || ''}
 						onChange={(e) => handle_inputChange(e)}
 						autoComplete="off"
 						onBlur={() => validator.current.showMessageFor('stars')}
 					/>
-					{validator.current.message('stars', athlete?.stars, 'required')}
+					{validator.current.message('stars', Number(athlete?.stars), 'numeric|min:1,num')}
+					{isSuper ? validator.current.message('stars', Number(athlete?.stars), 'numeric|max:5,num'): validator.current.message('stars', Number(athlete?.stars), 'numeric|max:3,num')}
 				</div>
 
 				<div className={styles.inputContainer}>

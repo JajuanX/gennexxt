@@ -96,7 +96,7 @@ export default function Login() {
 					</div>
 					<button className={styles.button} type='submit'>Log In</button>
 				</form>
-				<Link href='/login'>
+				<Link href='/sign-in'>
 					Not a Member?
 				</Link>
 			</div>
