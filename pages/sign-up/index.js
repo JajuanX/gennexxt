@@ -56,7 +56,7 @@ export default function SignUp() {
 			</div>
 			<div className={styles.container}>
 				<h1>Sign Up</h1>
-				<p>Welcome to the Generation Nexxt 5 star Database. This is a login portal for administration rights.
+				<p>Welcome to the Future Five Star Database. This is a login portal for administration rights.
 					If you are looking to add and edit athletes in the database your are in the right place. 
 					We currenlty do not have a portal for any other access. If you would like access please email 
 				<strong><a href='mailto:jmartin@gennexxt.com'> Josh Martin - jmartin@gennexxt.com</a></strong>
