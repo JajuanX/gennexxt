@@ -49,7 +49,7 @@ function AdminSearch() {
 		<div className={styles.admin}>
 			<Toaster position="top-center"/>
 			<h1>Admin Portal</h1>
-			<p>	Welcome to the Genexxt admin portal. Here you can create and edit athletes.
+			<p>	Welcome to the Future Five Star admin portal. Here you can create and edit athletes.
 				Just search for the athlete by state, then edit! Additionally you have access to create Athletes
 				by clicking the create button below. If you dont have access contact your administrator.
 			</p>
