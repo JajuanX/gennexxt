@@ -3,7 +3,7 @@ import React, {useContext} from 'react'
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './top-nav.module.scss';
-import Logo from '../../public/logo.jpeg';
+import Logo from '../../public/FFLogo.png';
 import UserContext from '../../lib/context';
 
 function TopNav() {

@@ -15,7 +15,7 @@ export default function Home() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<div className={styles.infoContainer}>
-				<h1>Generation Nexxt National Recruit Database</h1>
+				<h1>Future Five Star National Recruit Database</h1>
 				<p>Upgrade your <strong>Digital Footprint</strong> to enhance your brand. 
 					Sync Data, and add more content to the database. Such as Highlight tapes, 
 					Merch store, model/influencer Page, Logos , and more.</p>
