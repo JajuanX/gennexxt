@@ -34,7 +34,6 @@ function AdminSearch() {
 				data: {email: userEmail},
 			})
 			.then(response => {
-				console.log(response);
 				if(response.data?.result?.errorInfo){
 					return toast.error('Error giving rights be sure email matches')
 				}

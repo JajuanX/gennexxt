@@ -62,7 +62,6 @@ function AthletesByLetter() {
 		getAthletesLetter(letter)
 			.then(response => {
                 setAthletes(response)
-				console.log(response);
 			}).catch( () => {
 				toast.error("Sorry no athlete matching that ID")
 			})

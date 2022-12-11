@@ -49,7 +49,6 @@ function AthleteByID() {
 		getAllAthleteByID(athleteID)
 			.then(response => {
 				setAthlete(response)
-				console.log(response);
 			}).catch( error => {
 				toast.error("Sorry no athlete matching that ID")
 				console.log(error);
@@ -100,36 +99,36 @@ function AthleteByID() {
 					</div>
 				</div> : null}
 
-				{ athlete?.forty || athlete?.vertical_jump || athlete?.broad_leap || athlete?.five_ten_five ? 
-				<div className={styles.playerProfile}>
-					<h2>Player Profile</h2>
-					<div className={styles.attributesContainer}>
-						{athlete?.forty &&
-							<div className={styles.attributeContainer}>
-								<div className={styles.attributeTitle}>40yd Dash</div>
-								<span className={styles.attribute}>{athlete?.forty}</span>
-							</div>
-						}
-						{athlete?.vertical_jump &&
-							<div className={styles.attributeContainer}>
-								<div className={styles.attributeTitle}>Vertical</div>
-								<span className={styles.attribute}>{athlete?.vertical_jump}</span>
-							</div>
-						}
-						{athlete?.broad_leap &&
-							<div className={styles.attributeContainer}>
-								<div className={styles.attributeTitle}>Broad Jump</div>
-								<span className={styles.attribute}>{athlete?.broad_leap}</span>
-							</div>
-						}
-						{athlete?.five_ten_five &&
-							<div className={styles.attributeContainer}>
-								<div className={styles.attributeTitle}>5-10-5</div>
-								<span className={styles.attribute}>{athlete?.five_ten_five}</span>
-							</div>
-						}
-					</div>
-				</div> :
+				{athlete?.forty || athlete?.vertical_jump || athlete?.broad_leap || athlete?.five_ten_five ? 
+					<div className={styles.playerProfile}>
+						<h2>Player Profile</h2>
+						<div className={styles.attributesContainer}>
+							{athlete?.forty &&
+								<div className={styles.attributeContainer}>
+									<div className={styles.attributeTitle}>40yd Dash</div>
+									<span className={styles.attribute}>{athlete?.forty}</span>
+								</div>
+							}
+							{athlete?.vertical_jump &&
+								<div className={styles.attributeContainer}>
+									<div className={styles.attributeTitle}>Vertical</div>
+									<span className={styles.attribute}>{athlete?.vertical_jump}</span>
+								</div>
+							}
+							{athlete?.broad_leap &&
+								<div className={styles.attributeContainer}>
+									<div className={styles.attributeTitle}>Broad Jump</div>
+									<span className={styles.attribute}>{athlete?.broad_leap}</span>
+								</div>
+							}
+							{athlete?.five_ten_five &&
+								<div className={styles.attributeContainer}>
+									<div className={styles.attributeTitle}>5-10-5</div>
+									<span className={styles.attribute}>{athlete?.five_ten_five}</span>
+								</div>
+							}
+						</div>
+					</div> : 
 				null}
 				{athlete?.ig || athlete?.twitter || athlete?.tik_tok ?
 					<div className={styles.socialMediaIconsContainer}>
