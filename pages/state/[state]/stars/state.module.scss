@@ -10,6 +10,32 @@
 		background-color: white;    
 		width: 100%;
 
+		.filtersContainer {
+			position: sticky;
+			display: flex;
+			flex-direction: column;
+			z-index: 20;
+			background-color: #444;    
+			width: 95%;
+			margin: 0 auto;
+			border: 1px solid black;
+			border-radius: 10px;
+			padding: 12px;
+
+			h3 {
+				font-size: 1.2rem;
+				text-align: center;
+				margin-bottom: 16px;
+				color: white;
+			}
+
+			.filterContainer {
+				background-color: white;
+				padding: 16px;
+				border-radius: 10px;
+			}
+		}
+
 		h1 {
 			text-align: center;
 			margin: 24px 0;
@@ -19,11 +45,10 @@
 		.starContainer {
 			display: flex;
 			width: 100%;
-			padding: 10px 20px 20px;
+			padding: 10px 20px 0;
 			flex-direction: row;
 			justify-content: space-between;
 			text-decoration: none;
-			margin: 16px 0;
 
 			@media screen and (min-width: 450px) {
 				padding: 10px 80px 20px;
@@ -37,7 +62,7 @@
 	}
 
 	.athletesContainer {
-		padding-top: 260px;
+		padding-top: 295px;
 		min-height: 100vh;
 		p {
 			text-align: center;

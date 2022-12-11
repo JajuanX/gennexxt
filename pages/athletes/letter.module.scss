@@ -1,0 +1,51 @@
+.letter {
+    padding-top: 80px;
+
+    h1 {
+		text-align: center;
+		font-size: 2rem;
+		margin-bottom: 24px;
+	}
+    .headerContainer {
+		position: fixed;
+		display: flex;
+		flex-direction: column;
+		z-index: 10;
+		background-color: white;
+        // height: 305px;    
+		width: 100%;
+
+        .filtersContainer {
+            display: flex;
+            flex-direction: column;
+            z-index: 20;
+            background-color: #444;    
+            width: 95%;
+            margin: 0 auto;
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 12px;
+
+            h3 {
+                font-size: 1.2rem;
+                text-align: center;
+                margin-bottom: 16px;
+                color: white;
+            }
+            .filterContainer {
+                background-color: white;
+                padding: 10px;
+                border-radius: 10px;
+            }
+        }
+    }
+
+    .athletesContainer {
+        padding-top: 290px;
+    }
+
+    .waypoint {
+		height: 10px;
+	}
+
+}
