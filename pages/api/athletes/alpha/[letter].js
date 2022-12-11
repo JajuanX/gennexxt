@@ -1,5 +1,5 @@
-import { collectIdsandDocs } from '../../../../utils/utilities';
 import nc from 'next-connect';
+import { collectIdsandDocs } from '../../../../utils/utilities';
 import { firestore } from '../../../../lib/firebase';
 
 const getAthletesByLetter = nc({

@@ -17,10 +17,8 @@ const getAllAthletes = nc({
 	})
 	.post(async (req,res) => {
 		const [pageSize, state] = req.query.pagesize;
-		console.log(state);
 		const field = 'name';
 		const athlete = JSON.parse(req.body);
-		console.log('here');
 
 		if(athlete.length === 0) {
 			const nextPage = firestore.collection("athletes").orderBy(field).limit(pageSize)
