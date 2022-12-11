@@ -4,11 +4,11 @@ import Head from 'next/head';
 import toast from 'react-hot-toast';
 import axios from 'axios';
 import q from 'q';
+import { Waypoint } from 'react-waypoint';
 import styles from './letter.module.scss';
 import AthleteCard from '../../components/athlete-card/athleteCard';
 import IndexLayout from '../../layouts/IndexLayout';
 import SearchByAlpha from '../../components/search-alpha/searchByAlpha';
-import { Waypoint } from 'react-waypoint';
 
 function AthletesByLetter() {
 	const router = useRouter();

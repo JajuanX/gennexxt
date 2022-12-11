@@ -129,7 +129,7 @@ function AthleteByID() {
 							}
 						</div>
 					</div> : 
-				null}
+					null}
 				{athlete?.ig || athlete?.twitter || athlete?.tik_tok ?
 					<div className={styles.socialMediaIconsContainer}>
 						<h3>My Social Media</h3>
@@ -164,7 +164,7 @@ function AthleteByID() {
 							}
 						</div>
 					</div>
-				: null}
+					: null}
 				{athlete?.store ?
 					<div className={styles.shopContainer}>
 						<h3>Visit {athlete?.name ? `${athlete?.name.trim()}'s shop` : 'Visit My Shop'}</h3>
