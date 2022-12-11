@@ -4,6 +4,7 @@ import IndexLayout from '../layouts/IndexLayout';
 import SearchByClass from '../components/search-class/searchByClass';
 import SearchByStar from '../components/search-star/searchByStars';
 import SearchByState from '../components/search-state/searchByState';
+import SearchByAlpha from '../components/search-alpha/searchByAlpha';
 
 export default function Home() {
 
@@ -21,17 +22,21 @@ export default function Home() {
 					Merch store, model/influencer Page, Logos , and more.</p>
 			</div>
 			<div className={styles.searchByContainer}>
+				<h1>Filter Athletes</h1>
 				<div className={styles.stateContainer}>
-					<h3>Search By State</h3>
 					<SearchByState />
 				</div>
 				<div className={styles.classContainer}>
-					<h3>Search By Class</h3>
+					<h3>Graduation Year</h3>
 					<SearchByClass />
 				</div>
 				<div className={styles.starsContainer}>
-					<h3>Search By Star Rating</h3>
+					<h3>Star Rating</h3>
 					<SearchByStar />
+				</div>
+				<div className={styles.searchByNameContainer}>
+					<h3>Alphabet by Name</h3>
+					<SearchByAlpha />
 				</div>
 			</div>
 		</div>

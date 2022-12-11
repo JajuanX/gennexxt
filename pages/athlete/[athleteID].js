@@ -87,16 +87,20 @@ function AthleteByID() {
 					}
 				</div>
 
-				<div className={styles.infoContainer}>
+				{ athlete?.name ? <div className={styles.infoContainer}>
 					<div className={styles.titleContainer}>
 						<div className={`${styles.left} truncate ...`}>
-							<span className={styles.name}>{athlete.name}</span><span className={styles.position}>{athlete.position}</span>
+							<span className={styles.name}>{athlete.name}</span>
 						</div>
-						<span className={styles.classYear}>{athlete.class}</span>
+						<span className={styles.position}>{athlete.position}</span>
 					</div>
-					<span className={styles.location}>{athlete.city}, {athlete.state}</span>
-				</div>
+					<div className={styles.stateYearContainer}>
+						<div className={styles.location}>{athlete.city}, {athlete.state}</div>
+						<div className={styles.classYear}>{athlete.class}</div>
+					</div>
+				</div> : null}
 
+				{ athlete?.forty || athlete?.vertical_jump || athlete?.broad_leap || athlete?.five_ten_five ? 
 				<div className={styles.playerProfile}>
 					<h2>Player Profile</h2>
 					<div className={styles.attributesContainer}>
@@ -125,51 +129,54 @@ function AthleteByID() {
 							</div>
 						}
 					</div>
-				</div>
-				{athlete?.ig || athlete?.twitter || athlete?.tik_tok ?<h3>Social Media</h3>: null}
-				<div className={styles.socialMediaIconsContainer}>
-					<div className={styles.socialMediaIconContainer}>
-						{athlete?.ig &&
-							<div className={styles.attributeContainer}>
-								<a className={styles.attribute} target='_blank' rel="noreferrer" href={`https://www.instagram.com/${athlete?.ig}`}>
-									<Image alt='instagram' src={instagram} height={60} width={60}/>
-								</a>
-							</div>
-						}
-						{athlete?.tik_tok &&
-							<div className={styles.attributeContainer}>
-								<a className={styles.attribute} target='_blank' rel="noreferrer" href={`https://www.tiktok.com/@${athlete?.tik_tok}`}>
-									<Image alt='Tik Tok' src={tiktok} height={60} width={60}/>
-								</a>
-							</div>
-						}
-						{athlete?.twitter &&
-							<div className={styles.attributeContainer}>
-								<a className={styles.attribute} target='_blank' rel="noreferrer" href={`https://www.twitter.com/${athlete?.twitter}`}>
-									<Image alt='Twitter' src={twitter} height={60} width={60}/>
-								</a>
-							</div>
-						}
-						{athlete?.facebook &&
-							<div className={styles.attributeContainer}>
-								<a className={styles.attribute} target='_blank' rel="noreferrer" href={`https://www.facebook.com/${athlete?.facebook}`}>
-									<Image alt='Facebook' src={facebook} height={60} width={60}/>
-								</a>
-							</div>
-						}
+				</div> :
+				null}
+				{athlete?.ig || athlete?.twitter || athlete?.tik_tok ?
+					<div className={styles.socialMediaIconsContainer}>
+						<h3>My Social Media</h3>
+						<div className={styles.socialMediaIconContainer}>
+							{athlete?.ig &&
+								<div className={styles.attributeContainer}>
+									<a className={styles.attribute} target='_blank' rel="noreferrer" href={`https://www.instagram.com/${athlete?.ig}`}>
+										<Image alt='instagram' src={instagram} height={60} width={60}/>
+									</a>
+								</div>
+							}
+							{athlete?.tik_tok &&
+								<div className={styles.attributeContainer}>
+									<a className={styles.attribute} target='_blank' rel="noreferrer" href={`https://www.tiktok.com/@${athlete?.tik_tok}`}>
+										<Image alt='Tik Tok' src={tiktok} height={60} width={60}/>
+									</a>
+								</div>
+							}
+							{athlete?.twitter &&
+								<div className={styles.attributeContainer}>
+									<a className={styles.attribute} target='_blank' rel="noreferrer" href={`https://www.twitter.com/${athlete?.twitter}`}>
+										<Image alt='Twitter' src={twitter} height={60} width={60}/>
+									</a>
+								</div>
+							}
+							{athlete?.facebook &&
+								<div className={styles.attributeContainer}>
+									<a className={styles.attribute} target='_blank' rel="noreferrer" href={`https://www.facebook.com/${athlete?.facebook}`}>
+										<Image alt='Facebook' src={facebook} height={60} width={60}/>
+									</a>
+								</div>
+							}
+						</div>
 					</div>
-				</div>
-				{athlete?.store &&
+				: null}
+				{athlete?.store ?
 					<div className={styles.shopContainer}>
-						<h3>My Shop</h3>
+						<h3>Visit {athlete?.name ? `${athlete?.name.trim()}'s shop` : 'Visit My Shop'}</h3>
 						<a target='_blank' rel="noreferrer" href={athlete?.store}>
 							<Image alt='shop' src={shop} height={60} width={60}/>
 						</a>
-					</div>
+					</div> : null
 				}
 				{athlete?.highlight &&
 					<div className={styles.youtubeContainer}>
-						<h3>Hightlight Reel</h3>
+						<h3>Highlight Reel</h3>
 						<div className={styles.videoContainer}>
 							<YouTube videoId={athlete?.highlight} opts={opts} />
 						</div>

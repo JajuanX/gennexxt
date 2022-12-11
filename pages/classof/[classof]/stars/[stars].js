@@ -48,7 +48,7 @@ function AthletesByClass() {
 	}, [classof, stars])
 
 	const nextPage = async () => {
-		const last = athletes[athletes.length - 1]
+		const last = athletes[athletes.length - 1] || {};
 		if (Object.keys(last).length === 0) return;
 		if (last === lastAthlete) return;
 		getAthletesByClass(stars, last)
@@ -71,21 +71,20 @@ function AthletesByClass() {
 				<meta property="og:description" content={`The class of ${classof}`} />
 				{/* <meta property="og:image" content={business?.cover_photo.url} /> */}
 			</Head>
-			<h1>Class of {classof}</h1>
-			<div className={styles.filtersContainer}>
-				<div className={styles.filterContainer}>
+			<div className={styles.headerContainer}>
+				<h1>Class of {classof}</h1>
+				<div className={styles.filtersContainer}>
 					<h3>Filter by Class</h3>
-					<SearchByClass classYear={classof} />
-				</div>
-				<div className={styles.filterContainer}>
-					<h3>Filter by Stars</h3>
-					<div className={styles.starContainer}>
-						{starRating.map(star => (
-							<button type='button' name={star} key={star} onClick={() => getAllAthletesByStar(star)} >
-								{star <= stars ? <Image src={starIcon} height={20} width={20} alt='star' />:
-									<Image src={starOutlineIcon} height={20} width={20} alt='star' />}
-							</button>
-						))}
+					<div className={styles.filterContainer}>
+						<SearchByClass classYear={classof} />
+						<div className={styles.starContainer}>
+							{starRating.map(star => (
+								<button type='button' name={star} key={star} onClick={() => getAllAthletesByStar(star)} >
+									{star <= stars ? <Image src={starIcon} height={20} width={20} alt='star' />:
+										<Image src={starOutlineIcon} height={20} width={20} alt='star' />}
+								</button>
+							))}
+						</div>
 					</div>
 				</div>
 			</div>
