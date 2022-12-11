@@ -48,7 +48,7 @@ function AthletesByStars() {
 	}, [ starRating])
 
 	const nextPage = async () => {
-		const last = athletes[athletes.length - 1]
+		const last = athletes[athletes.length - 1] || {}
 		if (Object.keys(last).length === 0) return;
 		if (last === lastAthlete) return;
 		getAthletesByStarRating(starRating, last)
@@ -65,21 +65,26 @@ function AthletesByStars() {
 	return (
 		<div data-testid='business-page' className={styles.stars}>
 			<Head>
-				<title>Generation Nexxt {starRating} Star Athletes</title>
-				<meta name="description" content={`Generation Nexxt ${starRating} Star Athletes`}/>
-				<meta property="og:title" content={`Generation Nexxt ${starRating} Star Athletes`} />
-				<meta property="og:description" content={`Generation Nexxt ${starRating} Star Athletes`} />
+				<title>Future {starRating} Star Athletes</title>
+				<meta name="description" content={`Future ${starRating} Star Athletes`}/>
+				<meta property="og:title" content={`Future ${starRating} Star Athletes`} />
+				<meta property="og:description" content={`Future ${starRating} Star Athletes`} />
 				{/* <meta property="og:image" content={business?.cover_photo.url} /> */}
 			</Head>
 			<div className={styles.headerContainer}>
-				<h1>Generation Nexxt {starRating} Stars </h1>
-				<div className={styles.starContainer}>
-					{stars.map(star => (
-						<button type='button' name={star} key={star} onClick={() => onChangeStars(star)} >
-							{star <= starRating ? <Image src={starIcon} height={20} width={20} alt='star' />:
-								<Image src={starOutlineIcon} height={20} width={20} alt='star' />}
-						</button>
-					))}
+				<h1>Future {starRating} Stars </h1>
+				<div className={styles.filtersContainer}>
+					<h3>Filter By Star Rating</h3>
+					<div className={styles.filterContainer}>
+						<div className={styles.starContainer}>
+							{stars.map(star => (
+								<button type='button' name={star} key={star} onClick={() => onChangeStars(star)} >
+									{star <= starRating ? <Image src={starIcon} height={20} width={20} alt='star' />:
+										<Image src={starOutlineIcon} height={20} width={20} alt='star' />}
+								</button>
+							))}
+						</div>
+					</div>
 				</div>
 			</div>
 			<div className={styles.athletesContainer}>

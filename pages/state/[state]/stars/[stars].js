@@ -50,7 +50,7 @@ function AthletesByState() {
 	}, [state, stars])
 
 	const nextPage = async () => {
-		const last = athletes[athletes.length - 1]
+		const last = athletes[athletes.length - 1] || {};
 		if (Object.keys(last).length === 0) return;
 		if (last === lastAthlete) return;
 		getAthleteByState(last)
@@ -75,14 +75,19 @@ function AthletesByState() {
 			</Head>
 			<div className={styles.headerContainer}>
 				<h1>{state && abbrState(state, 'name')} {stars} Stars </h1>
-				<SearchByState />
-				<div className={styles.starContainer}>
-					{starsRating.map(star => (
-						<button type='button' name={star} key={star} onClick={() => getAllAthletesByStar(star)} >
-							{star <= stars ? <Image src={starIcon} height={20} width={20} alt='star' />:
-								<Image src={starOutlineIcon} height={20} width={20} alt='star' />}
-						</button>
-					))}
+				<div className={styles.filtersContainer}>
+					<h3>Filter By State</h3>
+					<div className={styles.filterContainer}>
+						<SearchByState />
+						<div className={styles.starContainer}>
+							{starsRating.map(star => (
+								<button type='button' name={star} key={star} onClick={() => getAllAthletesByStar(star)} >
+									{star <= stars ? <Image src={starIcon} height={20} width={20} alt='star' />:
+										<Image src={starOutlineIcon} height={20} width={20} alt='star' />}
+								</button>
+							))}
+						</div>
+					</div>
 				</div>
 			</div>
 			<div className={styles.athletesContainer}>

@@ -7,48 +7,65 @@
 		font-size: 2rem;
 		margin-bottom: 24px;
 	}
-	.filtersContainer {
-		position: sticky;
+	.headerContainer {
+		position: fixed;
 		display: flex;
 		flex-direction: column;
-		z-index: 20;
+		z-index: 10;
 		background-color: white;    
-		width: 95%;
-		margin: 0 auto;
-		border: 1px solid black;
-		border-radius: 10px;
-		
+		width: 100%;
 
-		.filterContainer {
-			margin-bottom: 16px;
-			h3 {
-				font-size: 1.2rem;
-				text-align: center;
-				margin-bottom: 16px;
-			}
-	
-			.starContainer {
-				display: flex;
-				width: 100%;
-				padding: 10px 20px 20px;
-				flex-direction: row;
-				justify-content: space-between;
-				text-decoration: none;
+		.filtersContainer {
+            display: flex;
+            flex-direction: column;
+            z-index: 20;
+            background-color: #444;    
+            width: 95%;
+            margin: 0 auto;
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 12px;
 
-				@media screen and (min-width: 450px) {
-					padding: 10px 80px 20px;
+            h3 {
+                font-size: 1.2rem;
+                text-align: center;
+                margin-bottom: 16px;
+                color: white;
+            }
+
+			.filterContainer {
+				background-color: white;
+                padding: 16px;
+                border-radius: 10px;
+				h3 {
+					font-size: 1.2rem;
+					text-align: center;
+					margin-bottom: 16px;
 				}
-	
-				button {
-					border: none;
-					background-color: transparent;
+		
+				.starContainer {
+					display: flex;
+					width: 100%;
+					padding: 10px 20px 0;
+					flex-direction: row;
+					justify-content: space-between;
+					text-decoration: none;
+
+					@media screen and (min-width: 450px) {
+						padding: 10px 80px 20px;
+					}
+		
+					button {
+						border: none;
+						background-color: transparent;
+					}
 				}
 			}
 		}
 	}
 
 	.athletesContainer {
-		padding-top: 10px;
+		padding-top: 300px;
 		min-height: 100vh;
 	}
 	.waypoint {

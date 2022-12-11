@@ -16,24 +16,50 @@
 			margin: 24px 0;
 		}
 
-		.starContainer {
+		.filtersContainer {
+			position: sticky;
 			display: flex;
-			width: 100%;
-			padding: 10px 20px 20px;
-			flex-direction: row;
-			justify-content: space-between;
-			text-decoration: none;
-			margin: 16px 0;
+			flex-direction: column;
+			z-index: 20;
+			background-color: #444;    
+			width: 95%;
+			margin: 0 auto;
+			border: 1px solid black;
+			border-radius: 10px;
+			padding: 12px;
 
-
-			@media screen and (min-width: 450px) {
-				padding: 10px 80px 20px;
+			h3 {
+				font-size: 1.2rem;
+				text-align: center;
+				margin-bottom: 16px;
+				color: white;
 			}
 
-			button {
-				border: none;
-				background-color: transparent;
+			.filterContainer {
+				background-color: white;
+				padding: 16px;
+				border-radius: 10px;
+
+				.starContainer {
+					display: flex;
+					width: 100%;
+					padding: 10px 20px 0;
+					flex-direction: row;
+					justify-content: space-between;
+					text-decoration: none;	
+	
+					@media screen and (min-width: 450px) {
+						padding: 10px 80px 20px;
+					}
+	
+					button {
+						border: none;
+						background-color: transparent;
+					}
+				}
+
 			}
+
 		}
 	}
 	.waypoint {
