@@ -8,16 +8,13 @@ const getByStars = nc({
 	}})
 	.get(async (req,res) => {
 		const [state] = req.query.state;
-		console.log(state);
 		if(state) {
-			console.log('indside');
 			const nextPage = 
 			firestore
 				.collection("athletes")
 				.where('state', '==', `${state}`)
 			const athletesRef = await nextPage.get()
 			const results = athletesRef.docs.map(collectIdsandDocs);
-			console.log(results);
 			res.send(results);
 		}
 	})

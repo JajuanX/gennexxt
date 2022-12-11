@@ -62,7 +62,6 @@ function EditAthlete() {
 		getAthleteByID(athleteID)
 			.then(response => {
 				handle_getAthlete(response)
-				console.log(response);
 			}).catch( error => {
 				toast.error("Sorry no athlete matching that ID")
 				console.log(error);

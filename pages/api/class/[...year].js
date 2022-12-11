@@ -35,7 +35,6 @@ const getByStars = nc({
 				.limit(8)
 		const athletes = await nextPageRef.get()
 		const results = athletes.docs.map(collectIdsandDocs);
-		console.log(results);
 		res.send(results);
 	})
 	

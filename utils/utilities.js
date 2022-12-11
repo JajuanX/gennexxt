@@ -9,8 +9,6 @@ export const getImageDimensions = file => new Promise((resolve,reject) => {
 		const img = new Image;
 		img.onload = () => {
 			const { width, height } = img;
-			console.log(width, height);
-
 			URL.revokeObjectURL(img.src);
 			if (width && height) 
 				resolve({ width, height });
